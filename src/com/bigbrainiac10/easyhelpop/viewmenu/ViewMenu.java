@@ -16,7 +16,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import vg.civcraft.mc.civmodcore.inventorygui.Clickable;
 import vg.civcraft.mc.civmodcore.inventorygui.ClickableInventory;
-import vg.civcraft.mc.civmodcore.inventorygui.ScheduledInventoryOpen;
 
 import com.bigbrainiac10.easyhelpop.EHOConfigManager;
 import com.bigbrainiac10.easyhelpop.HelpQuestion;
@@ -162,7 +161,7 @@ public class ViewMenu{
 		if (pageNum < pageNumMax)
 			menu.setSlot(forwardClick, 53);
 		
-		ScheduledInventoryOpen.schedule(plugin, menu, player);
+		menu.showInventory(player);
 	}
 	
 	private ItemStack createItem(Material material, String title, List<String> lore){

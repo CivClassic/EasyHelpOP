@@ -50,7 +50,14 @@ public class PlayerListener implements Listener {
 					Player player = Bukkit.getPlayer(p);
 					if (player == null) return;
 					for(HelpQuestion question : q){
-						OfflinePlayer p = Bukkit.getOfflinePlayer(UUID.fromString(question.replier_uuid));
+						UUID uuid = null;
+						OfflinePlayer p = null;
+						try {
+							uuid = UUID.fromString(question.replier_uuid);
+							p = Bukkit.getOfflinePlayer(uuid);
+						} catch (IllegalArgumentException e) {
+							// no-op safecatch
+						}
 						
 						player.sendMessage( replyMsg
 								.replace("%HELPER%", p != null ? p.getName() : "A helper")

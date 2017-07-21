@@ -39,6 +39,10 @@
 
   <repositories>
     <repository>
+      <id>devoted-repo</id>
+      <url>https://build.devotedmc.com/plugin/repository/everything/</url>
+    </repository>
+    <repository>
       <id>spigot-repo</id>
       <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
     </repository>
